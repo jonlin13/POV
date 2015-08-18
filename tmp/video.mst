@@ -1,0 +1,85 @@
+<div class='video-el'>
+<!-- 	<p>{{videoAttributeOne}}</p>
+	<p>{{videoAttributeTwo}}</p>
+	<p>{{videoAttributeThree}}</p> -->
+
+	<iframe id="player1" src="//player.vimeo.com/video/{{videoID}}?api=1&loop=1&player_id=player1" width="600" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<div id='vid-control'>
+		<button>Play</button>
+		<button>Pause</button>
+		<!-- <p>Status: <span class="status">&hellip;</span></p> -->
+	</div>
+	<div class='timeline'>
+		<div class='progress-bar'></div>
+	</div>
+
+	<div class='lower-3rd'>
+		<ul class='chapters'>
+			<li data-timestamp='{{flagOne}}' data-flag='one' class='flag one'>
+				<span>{{flagOneTitle}}</span>
+			</li>
+			<li data-timestamp='{{flagTwo}}' data-flag='two' class='flag two'>
+				<span>{{flagTwoTitle}}</span>
+			</li>
+			<li data-timestamp='{{flagThree}}' data-flag='three' class='flag three'>
+				<span>{{flagThreeTitle}}</span>
+			</li>
+			<li data-timestamp='{{flagFour}}' data-flag='four' class='flag four'>
+				<span>{{flagFourTitle}}</span>
+			</li>
+			<li data-timestamp='{{flagFive}}' data-flag='five' class='flag five'>
+				<span>{{flagFiveTitle}}</span>
+			</li>
+		</ul>
+		<!-- <div class='background'></div> -->
+	</div>
+</div>
+<div class='context one'>
+	<div class='text-wrap'>
+		<p>In August 1969, sectarian unrest in Belfast led to families being burned from their homes and fleeing to refugee camps. The British Army was deployed soon after.</p>
+	<div class='xout'>Continue Watching</div>
+	</div>
+	
+	<div class='background'></div>
+	<div class='visual one'></div>
+</div>
+
+<div class='context two'>
+	<div class='text-wrap'>
+		<p>Ballymurphy, a neighborhood in West Belfast, was the site of the killing of 11 civilians over August 9-11, 1971. Violence took place during Operation Demetrius, popularly known as “internment” - the army’s suspension of habeas corpus rights while attempting to arrest suspected members of the Irish Republican Army.</p><p>While their family fled to a camp, brothers John and Terry Laverty remained in Ballymurphy. John Laverty was shot and killed on August 10, 1971, by British paratroopers on his way home from visiting family.</p>
+	<div class='xout'>Continue Watching</div>
+	</div>
+	
+	<div class='background'></div>
+	<div class='visual two'></div>
+</div>
+
+<div class='context three'>
+	<div class='text-wrap'>
+		<p>Under the Diplock court system, trials for arrestees were held without juries or witnesses.</p>
+	<div class='xout'>Continue Watching</div>
+	</div>
+	
+	<div class='background'></div>
+	<div class='visual three'></div>
+</div>
+
+<div class='context four'>
+	<div class='text-wrap'>
+		<p>The paratrooper regiment that carried out the Ballymurphy killings would go on five months later to shoot 26 unarmed civilians in the infamous Bloody Sunday massacre in Derry/Londonderry.</p>
+	<div class='xout'>Continue Watching</div>
+	</div>
+	
+	<div class='background'></div>
+	<div class='visual four'></div>
+</div>
+
+<div class='context five'>
+	<div class='text-wrap'>
+		<p>The British state still maintains that the shootings of the Ballymurphy victims were justified.</p>
+	<div class='xout'>Continue Watching</div>
+	</div>
+	
+	<div class='background'></div>
+	<div class='visual five'></div>
+</div>

@@ -1,0 +1,171 @@
+ <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">  
+  <head>
+  <meta name="robots" content="noindex">
+    <title>In Your Own Words: The Troubles</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    
+    <link href='http://fonts.googleapis.com/css?family=Lekton:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style/css/style.css" type="text/css" media="screen" />  
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?1.29.1"></script>
+
+    <meta name="description" content="">
+    <meta name="language" content="english"> 
+    <meta name="copyright" content="">  
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="js/libs/preloadjs-0.6.0.min.js "></script> 
+
+    <!-- 
+    For Final Distribution:
+    <script src='js/app.min.js'></script>
+    -->
+
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"><![endif]-->
+    <!--[if IE 7]>  IE STYLE SHEETS COMING SOON  <![endif]-->
+    <!--[if IE 6]>  IE STYLE SHEETS COMING SOON  <![endif]-->
+
+    <!-- <script type="text/javascript">google analytics code here</script> -->
+    <style type="text/css">div#loader{}</style> 
+  </head>
+
+  <body>
+
+    <div id='container'>
+        <header>
+        <div class='title'>
+            <img src='img/title.png'>
+        </div>
+            <div id="nav-toggle" class='on'>
+                <div class='span-wrap'>
+                    <span class='top'></span>
+                    <span class='mid'></span>
+                    <span class='low'></span>
+                </div>
+            </div>
+            
+            <div id="dash-toggle">
+                <div class='span-wrap'>
+                    <a id='toggle-link' class='dash' href='#!/dashboard'>
+                        <span class='left'></span>
+                        <span class='right'></span>
+                        <span class='bottom'></span>
+                    </a>
+                </div>
+                <div class='span-wrap two'>
+                    <a id='toggle-link' class='tv' href='#!/channel1'>
+                        <img src='img/tv.png'>
+                    </a>
+                </div>
+            </div>
+            <div id='channel-title' class='channel1'><p>Ballymurphy Massacre: <span>Laverty Family</span></p></div>
+            <!-- <div id='channel-title-two' class='channel2'><p>Ballymurphy Massacre: <span>Laverty Family</span></p></div> -->
+
+        </header>
+        <nav id='main'>
+            <ul>
+                <li><a href='#!/channel1'>Watch</a></li>
+                <li><a href='#!/dashboard'>Overview</a></li>
+                <li><a href='#!/about'>About</a></li>
+            </ul>
+            <div class='background'></div>
+        </nav>
+        <section id='two-sided-container'>
+            <div class='card'>
+                <div id='player' class='subView side1'></div>
+
+                <div id='dashboard' class='subView side2'>
+
+                    <div id="map"></div>
+                    <div id="thumbs"></div>
+                    <div id='data-vis'>
+                      <div id="bargraph"></div>
+                      <div id="piechart"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <div id='channel-guide'>
+            <div class='tray-grip'>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class='channel one'>
+                <div class='desc'>
+                    <h1>Ballymurphy Massacre</h1>
+                    <p>Ballymurphy, a neighborhood in West Belfast, was the site of the killing of 11 civilians over August 9-11, 1971. Violence took place during Operation Demetrius, popularly known as “internment” - the army’s suspension of habeas corpus rights while attempting to arrest suspected members of the Irish Republican Army.</p>
+                </div>
+                <div class='background-el'></div>
+                <a class='guide-link' href='#!/channel1'></a>
+            </div>
+            <div class='channel two'>
+                <div class='desc'>
+                    <h1>Dealing With The Past</h1>
+                    <p>Victims’ families’ interactions with the Historical Enquiries Team, Historical Investigations Unit, Police Ombudsman, Commissioner for Victims and Survivors, and other inquest and investigative bodies on the Troubles.  The search for acknowledgment and accountability.  </p>
+                </div>
+                <div class='background-el'></div>
+                <a class='guide-link' href='#!/channel2'></a>
+            </div>
+            <div class='channel three'>
+                <div class='desc'>
+                    <h1>Rubber & plastic Bullets</h1>
+                    <p>Rubber & plastic bullets - intended be a non-lethal crowd control device - were used and misused by security forces throughout the Troubles resulting in 11 deaths, mostly of children, and many injuries.</p>
+                </div>
+                <div class='background-el'></div>
+                <a class='guide-link' href='#!/channel2'></a>
+            </div>
+            <div class='channel four'>
+                <div class='desc'>
+                    <h1>Security Forces Interviews</h1>
+                    <p>Interviews with members of the Royal Ulster Constabulary (RUC) police, Ulster Defense Regiment (UDR) national guard, and prison administrators.</p>
+                </div>
+                <div class='background-el'></div>
+                <a class='guide-link' href='#!/channel2'></a>
+            </div>
+            <div class='channel five'>
+                <div class='desc'>
+                    <h1>Shankill Road Bombing </h1>
+                    <p>Ten people were killed and more than fifty wounded, when the Provisional IRA bombed a fish shop on central Shankill Road on October 23, 1993.  The intended target was a meeting of the senior leadership of the Ulster Defense Association (UDA).  The bomb exploded prematurely, and unbeknownst to the PIRA, the meeting had been rescheduled.</p>
+                </div>
+                <div class='background-el'></div>
+                <a class='guide-link' href='#!/channel2'></a>
+            </div>
+        </div>
+        <div id='about'>
+            <div class='wrap'>
+                <h1>About</h1>
+                <p>In Your Own Words: Understanding The Troubles is a collection of first-hand accounts of the conflict in Northern Ireland from 1966-1998.  Each participating family has lost a loved one in the conflict, and they speak about their lives before, during, and after the incident.</p>
+                <p>In Your Own Words is a collaborative partnership, initiated by Professor Christian Davenport (University of Michigan, USA) and Relatives For Justice (Belfast, Northern Ireland).</p>
+                <p>The 57 interviews currently comprising In Your Own Words were conducted in 2010 in Belfast and across Northern Ireland by Mark Thompson, Mark Sykes, and Pauline Fitzpatrick of Relatives for Justice, and were filmed by Brian Ashby and Ben Kolak of Scrappers Film Group (Chicago, USA). Production support was provided by the Kroc Institute for International Peace Studies (Notre Dame University, USA).</p>
+                <p>The interviews were edited from 2012-13 with support from the Northern Ireland Community Relations Council. The editors were Brian Ashby, Nick Bogert, Ben Kolak, Mojo Lorwin, Alex Mackenzie, and David Nagel.</p>
+                <p>This prototype was produced at the POV Hackathon 9 in Chicago, August 15-16, 2015 by Jon Linton and James Ellis, with Brian Ashby and Yana Kunichoff of Scrappers Film Group. Thanks to Adnaan Wasey and POV Digital.</p>
+                <div class='xout about'>Close</div>
+            </div>
+            <div class='background'></div>
+        </div>
+    </div> 
+    <div id='loader'></div>
+
+    <!-- For Development: -->
+    <script src="js/libs/path.min.js"></script>
+    <script src="node_modules/mustache/mustache.min.js"></script>
+    <script src="js/libs/froogaloop.js"></script>
+    <script src="js/data-vis.js"></script>
+    <script src="js/libs/slick.min.js"></script> 
+    <script src="js/data/data.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <!-- 
+    For Final Distribution: 
+    <script src="js/app.min.js"></script> 
+    -->
+  </body>
+</html>

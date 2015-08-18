@@ -1,0 +1,32 @@
+@font-face {
+	// font-family: 'Din Light';
+	// src: url('fonts/ff_din_light-webfont.eot?') format('eot'), 
+	// url('fonts/ff_din_light-webfont.woff') format('woff'), 
+	// url('fonts/ff_din_light-webfont.ttf') format('truetype');
+	// font-weight: normal;
+	// font-style: normal;
+}
+
+//type variables
+//$din: 'Din Light', Helvetica, Arial, sans-serif;
+$lekton: 'Lekton', Helvetica, Arial, sans-serif;
+
+//color variables
+$color1: #000000;
+$color2: #000000;
+$color3: #000000;
+
+//Style Rules
+p, h1, h2, h3, h4, h5, h6, a, span, div{
+	-webkit-font-smoothing: antialiased !important;
+  	-moz-osx-font-smoothing: grayscale !important;
+  	font-style: normal !important;
+  	font-family: $lekton;
+}
+
+// Type Rules
+
+
+  
+
+

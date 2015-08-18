@@ -1,0 +1,40 @@
+@charset "utf-8";  
+@import 'normalize';
+@import 'foundation'; 
+@import 'mediaqueries';
+@import 'mixins'; 
+@import 'typeandcolor';
+@import 'vendor';
+@import 'slick';
+@import 'general';
+@import 'nav';
+
+//We can keep media queries in all style declarations and write them like this:
+// p {
+//   @include mobile{
+//     font-size: 10px;
+//   }
+//   @include tablet {
+//     font-size: 18px;
+//   }
+//   @include desktop {
+//     font-size: 20px;
+//   }
+// }
+   
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+    

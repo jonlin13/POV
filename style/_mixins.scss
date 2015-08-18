@@ -1,0 +1,154 @@
+
+/* Mixins */
+@mixin vertical-align {
+  position: relative !important;
+  top: 50% !important;
+  -webkit-transform: translateY(-50%) !important;
+  -ms-transform: translateY(-50%) !important;
+  transform: translateY(-50%) !important;
+}
+
+@mixin fullWH{
+  position: absolute;
+  top: 0;
+  left:0;
+  height:100%;
+  width:100%;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// generic transform
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+// @include shadow(-4px, 4px, 20px, 20px, #000);
+@mixin shadow($horizOffset, $vertOffset, $blur, $spread, $color){
+  -webkit-box-shadow: $horizOffset $vertOffset $blur $spread $color;
+     -moz-box-shadow: $horizOffset $vertOffset $blur $spread $color;
+          box-shadow: $horizOffset $vertOffset $blur $spread $color;
+}
+
+// rotate //usage: @include rotate(-45);
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+ 
+ // rotate //usage: @include rotateY(-45);
+@mixin rotateY($deg) {
+  @include transform(rotateY(#{$deg}deg));
+}
+
+// scale //usage: @include scale(1.5);
+@mixin scale($scale) {
+	 @include transform(scale($scale));
+} 
+
+// translate //usage: @include translate(25,10);
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+
+// translate //usage: @include translate3d(25,10, 5);
+@mixin translate3d ($x, $y, $z) {
+   @include transform(translate3d($x, $y, $z));
+}
+
+// skew //usage: @include skew(25,10);
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin //usage: @include transform-origin(top left);
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+	     -o-transform-origin: $origin;
+	    -ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
+
+//transition //usage: @include transition(all, 0.25s, ease-in-out, 0s);
+@mixin transition($transition-property, $transition-time, $method, $delay) {
+    -webkit-transition: $transition-property $transition-time $method $delay;
+    -moz-transition: $transition-property $transition-time $method $delay;
+    -ms-transition: $transition-property $transition-time $method $delay;
+    -o-transition: $transition-property $transition-time $method $delay;
+    transition: $transition-property $transition-time $method $delay;
+}
+
+@mixin transitionSlip($time){
+  -webkit-transition: all $time cubic-bezier(0.995, 0.020, 0.405, 0.995); 
+   -moz-transition: all $time cubic-bezier(0.995, 0.020, 0.405, 0.995); 
+     -o-transition: all $time cubic-bezier(0.995, 0.020, 0.405, 0.995); 
+        transition: all $time cubic-bezier(0.995, 0.020, 0.405, 0.995);
+}
+
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+// example usage:
+//  @include keyframes(loadFade1) {
+//     0%{opacity:1;}
+//     25% {opacity:0;}
+//     50%{opacity:0;}
+//     75%{opacity:1;}
+//     100%{opacity:1;}
+//  }
+// @include animation(loadFade1, 800ms, ease-in-out, 0s, infinite);
+
+@mixin animation($name, $duration, $ease, $delay, $iteration) {
+  -webkit-animation-name: $name;
+  -webkit-animation-duration: $duration; 
+  -webkit-animation-timing-function: $ease; 
+  -webkit-animation-delay: $delay;
+  -webkit-animation-iteration-count: $iteration;
+
+  -moz-animation-name: $name;
+  -moz-animation-duration: $duration; 
+  -moz-animation-timing-function: $ease; 
+  -moz-animation-delay: $delay;
+  -moz-animation-iteration-count: $iteration;
+
+  -o-animation-name: $name;
+  -o-animation-duration: $duration; 
+  -o-animation-timing-function: $ease; 
+  -o-animation-delay: $delay;
+  -o-animation-iteration-count: $iteration;
+
+  animation-name: $name;
+  animation-duration: $duration; 
+  animation-timing-function: $ease; 
+  animation-delay: $delay;
+  animation-iteration-count: $iteration;
+}
+
+
+
+  
+
+
+
