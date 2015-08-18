@@ -13,8 +13,6 @@ Version 1.0.0
 
 
 ```
-#!javascript
-
 git clone https://jlin13@bitbucket.org/{username}/iyow.git
 cd iyow
 npm install
@@ -24,8 +22,6 @@ Use Grunt to run a local server & compile scss
 
 
 ```
-#!javascript
-
 grunt server
 ```
 
