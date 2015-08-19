@@ -12,10 +12,8 @@ Version 1.0.0
 
 
 ```
-#!javascript
-
-git clone https://{username}/jlin13/iyow.git
-cd iyow
+git clone https://github.com/jonlin13/POV.git
+cd POV
 npm install
 ```
 
@@ -23,8 +21,6 @@ Use Grunt to run a local server & compile scss
 
 
 ```
-#!javascript
-
 grunt server
 ```
 
@@ -39,7 +35,5 @@ Also use Grunt to build a production-ready directory
 
 
 ```
-#!javascript
-
 grunt build
 ```
