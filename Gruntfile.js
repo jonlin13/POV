@@ -36,16 +36,6 @@ module.exports = function(grunt){
 				path: 'http://localhost:<%= connect.server.options.port%>'
 			}
 		},
-		imagemin: {                                // Task
-			dynamic: {                             // Another target
-				files: [{
-					expand: true,                  // Enable dynamic expansion
-					cwd: 'img/',                   // Src matches are relative to this path
-					src: ['*.{png,jpg,gif}'],      // Actual patterns to match
-					dest: 'dist/img'               // Destination path prefix
-				}]
-			}
-		},
 		cssmin: {
 			target: {
 				files: [{
@@ -60,24 +50,51 @@ module.exports = function(grunt){
 		uglify: {
 			my_target: {
 				files: {
-					'dist/js/app.min.js': ['node_modules/jquery/dist/jquery.min.js', 
-					'js/libs/preloadjs-0.6.0.min.js',
-					'node_modules/vimeo-froogaloop/froogaloop.min.js', 
-					'js/libs/path.min.js',
-					'node_modules/mustache/mustache.min.js', 
-					'js/app.js']
+					'dist/js/app.min.js': 
+					[
+						'node_modules/jquery/dist/jquery.min.js', 
+						'js/libs/preloadjs-0.6.0.min.js',
+						'js/libs/path.min.js',
+						'node_modules/mustache/mustache.min.js',
+						'js/libs/froogaloop.js', 
+						'js/data-vis.js', 
+						'js/data/data.js',
+						'js/app.js'
+					]
+				}
+			}
+		},
+		jsonmin: {
+			dev: {
+				options: {
+					stripWhitespace: true,
+					stripComments: true
+				},
+				files: {
+					'dist/trimmed_georef.json':'trimmed_georef.json',
+					'dist/thumbnails.json':'thumbnails.json'
 				}
 			}
 		},
 		htmlmin: {                                     
 			dist: {                                      
-			  options: {                                
-			    removeComments: true,
-			    collapseWhitespace: true
-			  },
-			  files: {                                   
-			    'dist/index.html': 'index.html'     
-			  }
+				options: {                                
+					removeComments: true,
+					collapseWhitespace: true
+				},
+				files: {                                   
+					'dist/index.html': 'index.html'
+					//'dist/tmp/video.mst':'tmp/video.mst'     
+				}
+			}
+		},
+		copy: {
+			main: {
+				files: [
+					// includes files within path 
+					{expand: true, src: ['tmp/*'], dest: 'dist'},
+					{expand: true, src: ['img/**'], dest: 'dist'}
+				]
 			}
 		}
 	});
@@ -91,9 +108,10 @@ module.exports = function(grunt){
 	grunt.registerTask('server',['connect', 'open', 'watch']);
 
 	//Build for Production:
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-jsonmin');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
-	grunt.registerTask('build',['imagemin','cssmin', 'uglify', 'htmlmin']);
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.registerTask('build',['cssmin', 'uglify', 'jsonmin', 'htmlmin', 'copy']);
 }

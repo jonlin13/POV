@@ -1,4 +1,3 @@
-POV Hackathon Prototype for In Your Own Words
 Version 1.0.0
 
 ## **Technology** ##
@@ -13,7 +12,9 @@ Version 1.0.0
 
 
 ```
-git clone https://jlin13@bitbucket.org/{username}/iyow.git
+#!javascript
+
+git clone https://{username}/jlin13/iyow.git
 cd iyow
 npm install
 ```
@@ -22,6 +23,8 @@ Use Grunt to run a local server & compile scss
 
 
 ```
+#!javascript
+
 grunt server
 ```
 
@@ -40,7 +43,3 @@ Also use Grunt to build a production-ready directory
 
 grunt build
 ```
-=======
-# POV
-
-
